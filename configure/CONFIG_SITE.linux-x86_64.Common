@@ -8,7 +8,7 @@ HDF5_LIB     = $(HDF5)/lib
 HDF5_INCLUDE = -I$(HDF5)/include
 
 WITH_SZIP      = YES
-SZIP_EXTERANL  = YES
+SZIP_EXTERNAL  = YES
 SZIP           = /dls_sw/prod/tools/RHEL6-x86_64/szip/2-1/prefix
 SZIP_LIB       = $(SZIP)/lib
 SZIP_INCLUDE   = -I$(SZIP)/include
