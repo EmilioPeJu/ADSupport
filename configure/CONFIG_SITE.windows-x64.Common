@@ -1,18 +1,22 @@
-#     - To build the IOC applications set BUILD_IOCS to YES
-#       Otherwise set it to NO
-BUILD_IOCS=NO
+CROSS_COMPILER_TARGET_ARCHS =
 
-#     - To include GraphicsMagick support set the following to YES
-#     - To not use it comment out the line or set it to NO
-#     - GraphicsMagick is required for NDFileMagick and the URL driver.
-#     - On Fedora the 32-bit and 64-bit versions of GraphicsMagick conflict, 
-#     - so we define it to NO here and to YES in CONFIG_SITE.Linux.linux-x86_64
-USE_GRAPHICSMAGICK=NO
+SHARED_LIBRARIES = YES
 
-CROSS_COMPILER_TARGET_ARCHS = 
+WITH_HDF5         = YES
+HDF5_EXTERNAL     = NO
+HDF5_STATIC_BUILD = NO
 
-HDF5_STATIC_BUILD=NO
-#HDF5_STATIC_BUILD=$(BUILD_STATIC)
+WITH_SZIP      = YES
+SZIP_EXTERNAL  = NO
 
-EPICS_V4_PLUGIN=YES
+WITH_JPEG     = YES
+JPEG_EXTERNAL = NO
 
+WITH_TIFF     = YES
+TIFF_EXTERNAL = NO
+
+WITH_XML2     = YES
+XML2_EXTERNAL = NO
+
+WITH_ZLIB     = YES
+ZLIB_EXTERNAL = NO
