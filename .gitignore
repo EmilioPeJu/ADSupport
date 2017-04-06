@@ -21,3 +21,4 @@ ci/coverage.info
 ci/html/
 
 .idea/
+cmake-build*/
