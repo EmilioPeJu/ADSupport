@@ -1,20 +1,6 @@
-#     - To build the IOC applications set BUILD_IOCS to YES
-#       Otherwise set it to NO
-BUILD_IOCS=NO
+CROSS_COMPILER_TARGET_ARCHS =
 
-#     - To include GraphicsMagick support set the following to YES
-#     - To not use it comment out the line or set it to NO
-#     - GraphicsMagick is required for NDFileMagick and the URL driver.
-USE_GRAPHICSMAGICK=NO
-
-CROSS_COMPILER_TARGET_ARCHS = 
-
-# Comment-in the following line if building asyn ports stand-alone
-# i.e. without an IOC. Note that asyn will also need to have been 
-# built with this flag
-# EPICS_LIBCOM_ONLY=YES
-
-# Define the location of the hdf5, sz, and GraphicsMagick libraries
+# Enable file plugins and define sources
 WITH_HDF5    = YES
 HDF5_EXTERNAL= YES
 HDF5         = /dls_sw/prod/tools/RHEL6-x86_64/hdf5/1-10-0/prefix
@@ -27,15 +13,6 @@ SZIP           = /dls_sw/prod/tools/RHEL6-x86_64/szip/2-1/prefix
 SZIP_LIB       = $(SZIP)/lib
 SZIP_INCLUDE   = -I$(SZIP)/include
 
-WITH_EPICS_V4   = YES
-#EPICS_V4_PLUGIN=YES
-
-WITH_BOOST     = YES
-BOOST_EXTERNAL = YES
-BOOST=/usr
-BOOST_LIB      = $(BOOST)/lib64
-BOOST_INCLUDE  = -I$(BOOST)/include
-
 WITH_JPEG     = YES
 JPEG_EXTERNAL = YES
 
@@ -47,7 +24,5 @@ XML2_EXTERNAL = YES
 # libxml2 installs headers in a non-standard system location. 
 XML2_INCLUDE=-I/usr/include/libxml2
 
-
 WITH_ZLIB     = YES
 ZLIB_EXTERNAL = YES
-
