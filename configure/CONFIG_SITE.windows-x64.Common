@@ -1,7 +1,9 @@
 CROSS_COMPILER_TARGET_ARCHS =
 
+# Windows requires this to enable linking of libraries during build
 SHARED_LIBRARIES = YES
 
+# Enable file plugins to be built in ADSupport
 WITH_HDF5         = YES
 HDF5_EXTERNAL     = NO
 HDF5_STATIC_BUILD = NO
