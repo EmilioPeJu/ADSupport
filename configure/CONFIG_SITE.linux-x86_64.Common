@@ -3,7 +3,7 @@ CROSS_COMPILER_TARGET_ARCHS =
 # Enable file plugins and define sources
 WITH_HDF5     = YES
 HDF5_EXTERNAL = YES
-HDF5          = /dls_sw/prod/tools/RHEL6-x86_64/hdf5/1-10-0/prefix
+HDF5          = /dls_sw/prod/tools/RHEL6-x86_64/hdf5/1-10-1/prefix
 HDF5_LIB      = $(HDF5)/lib
 HDF5_INCLUDE  = -I$(HDF5)/include
 
