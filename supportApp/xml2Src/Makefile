@@ -9,13 +9,22 @@ ifeq ($(XML2_EXTERNAL),NO)
 
   LIBRARY = xml2
 
+  ifeq ($(WITH_ZLIB),YES)
+    ifeq ($(ZLIB_EXTERNAL),NO)
+      USR_CFLAGS_WIN32 += -DHAVE_ZLIB_H
+      LIB_LIBS += zlib
+    endif # ($(ZLIB_EXTERNAL),NO)
+  endif # ($(WITH_ZLIB),YES)
+
+  USR_CFLAGS_WIN32 += -DWIN32
   ifeq ($(SHARED_LIBRARIES),YES)
-    USR_CFLAGS_WIN32 += -DPIC -DNOLIBTOOL
+    USR_CFLAGS += -DPIC -DNOLIBTOOL
   endif
+  xml2_SYS_LIBS_WIN32 += ws2_32
 
   # Need _REENTRANT flag on Linux for threads to build correctly
   USR_CFLAGS_Linux += -D_REENTRANT
-
+  
   INC_WIN32 += win32config.h
   INC_WIN32 += wsockcompat.h
   INC_Darwin += config.h

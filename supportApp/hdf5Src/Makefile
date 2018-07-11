@@ -364,7 +364,7 @@ ifeq ($(WITH_HDF5),YES)
 
     ifeq ($(SZIP_EXTERNAL),YES)
       ifdef SZIP_INCLUDE
-        USR_INCLUDES += $(SZIP_INCLUDE)
+        USR_INCLUDES += -I$(SZIP_INCLUDE)
       endif
       ifdef SZIP_LIB
         sz_DIR       = $(SZIP_LIB)
@@ -378,7 +378,7 @@ ifeq ($(WITH_HDF5),YES)
 
     ifeq ($(ZLIB_EXTERNAL),YES)
       ifdef ZLIB_INCLUDE
-        USR_INCLUDES += $(ZLIB_INCLUDE)
+        USR_INCLUDES += -I$(ZLIB_INCLUDE)
       endif
       ifdef ZLIB_LIB
         z_DIR        = $(ZLIB_LIB)
@@ -388,6 +388,24 @@ ifeq ($(WITH_HDF5),YES)
       endif
     else
       LIB_LIBS += zlib
+    endif
+
+    ifeq ($(WITH_BLOSC),YES)
+      USR_CFLAGS += -DH5_HAVE_FILTER_BLOSC
+      LIB_SRCS += blosc_filter.c
+      ifeq ($(BLOSC_EXTERNAL),YES)
+        ifdef BLOSC_INCLUDE
+          USR_INCLUDES += -I$(BLOSC_INCLUDE)
+        endif
+        ifdef BLOSC_LIB
+          blosc_DIR = $(BLOSC_LIB)
+          LIB_LIBS += blosc
+        else
+          LIB_SYS_LIBS += blosc
+        endif
+      else
+        LIB_LIBS += blosc
+      endif
     endif
 
     LIB_SYS_LIBS_WIN32 += ws2_32
