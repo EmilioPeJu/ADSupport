@@ -3,15 +3,15 @@ CROSS_COMPILER_TARGET_ARCHS =
 # Enable file plugins and define sources
 WITH_HDF5     = YES
 HDF5_EXTERNAL = YES
-HDF5          = /dls_sw/prod/tools/RHEL6-x86_64/hdf5/1-10-1/prefix
+HDF5          = /dls_sw/prod/tools/RHEL7-x86_64/hdf5/1-10-2/prefix
 HDF5_LIB      = $(HDF5)/lib
-HDF5_INCLUDE  = -I$(HDF5)/include
+HDF5_INCLUDE  = $(HDF5)/include
 
 WITH_SZIP     = YES
 SZIP_EXTERNAL = YES
-SZIP          = /dls_sw/prod/tools/RHEL6-x86_64/szip/2-1/prefix
+SZIP          = /dls_sw/prod/tools/RHEL7-x86_64/szip/2-1-1/prefix
 SZIP_LIB      = $(SZIP)/lib
-SZIP_INCLUDE  = -I$(SZIP)/include
+SZIP_INCLUDE  = $(SZIP)/include
 
 WITH_JPEG     = YES
 JPEG_EXTERNAL = YES
@@ -19,9 +19,8 @@ JPEG_EXTERNAL = YES
 WITH_TIFF     = YES
 TIFF_EXTERNAL = YES
 
-WITH_XML2     = YES
 XML2_EXTERNAL = YES
-XML2_INCLUDE  = -I/usr/include/libxml2
+XML2_INCLUDE  = /usr/include/libxml2
 
 WITH_ZLIB     = YES
 ZLIB_EXTERNAL = YES
