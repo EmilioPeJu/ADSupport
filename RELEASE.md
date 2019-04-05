@@ -13,6 +13,23 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
+R1-6 (December 3, 2018)
+========================
+* Added a new library, decompressJPEG. This contains a small C function to do all of the calls to libjpeg
+  to decompress a JPEG encoded buffer.  It is intended to be called from Java for the ImageJ EPICS_NTNDA_Viewer.
+  It could also be called from other languages.
+* Fixed a minor problem with netCDFSrc/libdispatch/dauth.c
+* Fixes to netCDFSrc to work with vxWorks 5.5, 6.8, and 6.9.
+
+
+R1-5 (November 12, 2018)
+========================
+* Added support for reading MJPEG streams to GraphicsMagickSrc and xml2Src.  This allows ADURL to stream
+  data from Web cameras. Thanks to Peter Heesterman for this.
+* Updated netCDFSrc from netCDF 4.1.3 to 4.6.1.  Updated netCDFSrc/README.epics to document how this was done.
+* Fixed a problem when closing netCDF files > 2 GB on Windows when building with Visual Studio 2015 or 2017.
+
+
 R1-4 (January 27, 2018)
 ========================
 * Added support for Blosc filter library.  This is used by NDFileHDF5.  Thanks to Xiaoqiang Wang for this.
