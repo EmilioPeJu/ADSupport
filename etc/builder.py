@@ -36,9 +36,6 @@ class ADSupport(Device):
         else:
             LibFileList = hdfstatic + LibFileList
         
-        # TODO these should also be protected by a 'use' clause
-        LibFileList += ['ADBase', 'NDPlugin']
-        
         SysLibFileList = ['Oleaut32', 'Gdi32']
 
     AutoInstantiate = True
