@@ -26,7 +26,7 @@ class ADSupport(Device):
             'CORE_RL_jp2_', 'CORE_RL_jbig_', 'CORE_RL_bzlib_',
             'CORE_RL_filters_', 'CORE_RL_coders_', 'CORE_RL_magick_',
             'CORE_RL_wand_', 'CORE_RL_Magick++_']
-        LibFileList = []
+        LibFileList = ['blosc']
         if usemagic:
             LibFileList += magiclibs
         else:
