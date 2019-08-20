@@ -78,7 +78,7 @@ static size_t H5Z_filter_lz4(unsigned int flags, size_t cd_nelmts,
 
         if (NULL==(outBuf = malloc(origSize)))
         {
-            printf("cannot malloc\n");
+            printf("error calling malloc\n");
             goto error;
         }
         roBuf = (char*)outBuf;   /* pointer to current write position */
@@ -152,7 +152,7 @@ static size_t H5Z_filter_lz4(unsigned int flags, size_t cd_nelmts,
         }
         nBlocks = (nbytes-1)/blockSize +1;
         maxDestSize = LZ4_compressBound(nbytes) + 4 + 8 + nBlocks*4;
-        outBuf = H5allocate_memory(maxDestSize, false);
+        outBuf = malloc(maxDestSize);
         if (NULL == outBuf)
         {
             goto error;
@@ -200,7 +200,7 @@ static size_t H5Z_filter_lz4(unsigned int flags, size_t cd_nelmts,
             outSize += compBlockSize + 4;
         }
 
-        H5free_memory(*buf);
+        free(*buf);
         *buf = outBuf;
         *buf_size = outSize;
         outBuf = NULL;
@@ -215,7 +215,7 @@ static size_t H5Z_filter_lz4(unsigned int flags, size_t cd_nelmts,
 
     error:
     if(outBuf)
-        H5free_memory(outBuf);
+        free(outBuf);
     outBuf = NULL;
     return 0;
 }
