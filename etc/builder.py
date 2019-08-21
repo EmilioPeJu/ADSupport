@@ -18,8 +18,8 @@ class ADSupport(Device):
             # MSVC2010. So we cant use them.
             usemagic = False
         usehdfdlls = True
-        hdfdlls = ['zlib', 'szip', 'hdf5', 'xml2']
-        hdfstatic = ['zlib', 'libszip', 'hdf5', 'xml2']
+        hdfdlls = ['zlib', 'szip', 'hdf5', 'hdf5_hl', 'xml2']
+        hdfstatic = ['zlib', 'libszip', 'hdf5', 'hdf5_hl', 'xml2']
         magiclibs = ['CORE_RL_zlib_',
             'CORE_RL_xlib_', 'CORE_RL_wmf_', 'CORE_RL_ttf_', 'CORE_RL_tiff_',
             'CORE_RL_png_', 'CORE_RL_libxml_', 'CORE_RL_lcms_', 'CORE_RL_jpeg_',
