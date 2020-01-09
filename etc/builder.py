@@ -37,6 +37,8 @@ class ADSupport(Device):
             LibFileList = hdfstatic + LibFileList
         
         SysLibFileList = ['Oleaut32', 'Gdi32']
+    elif Architecture() == 'linux-x86_64':
+        LibFileList = ['cbfad']
 
     AutoInstantiate = True
 

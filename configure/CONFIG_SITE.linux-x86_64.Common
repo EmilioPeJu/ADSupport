@@ -31,3 +31,6 @@ BLOSC         = /dls_sw/prod/tools/RHEL7-x86_64/c-blosc/1-14-2/prefix
 BLOSC_LIB     = $(BLOSC)/lib
 BLOSC_INCLUDE = $(BLOSC)/include
 
+WITH_CBF      = YES
+CBF_EXTERNAL  = NO
+
